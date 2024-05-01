@@ -78,11 +78,11 @@ public abstract class Sistema {
                 nome = Console.lerString();
                 System.out.print("Horas trabalhadas: ");
                 horasTrab = Console.lerDouble();
-                System.out.print("Valor hora: R$");
+                System.out.print("Valor hora: R$ ");
                 valorH = Console.lerDouble();
                 System.out.print("Nome do projeto: ");
                 projeto = Console.lerString();
-                System.out.print("Bonus anual: R$");
+                System.out.print("Bonus anual: R$ ");
                 bonusAnual = Console.lerDouble();
 
                 Gerente temp = new Gerente(nome, matricula, horasTrab, valorH, projeto, bonusAnual);
@@ -112,11 +112,11 @@ public abstract class Sistema {
                 nome = Console.lerString();
                 System.out.print("Horas trabalhadas: ");
                 horasTrab = Console.lerDouble();
-                System.out.print("Valor hora: R$");
+                System.out.print("Valor hora: R$ ");
                 valorH = Console.lerDouble();
                 System.out.print("Tecnologia: ");
                 tecnologia = Console.lerString();
-                System.out.print("Auxilio saúde: R$");
+                System.out.print("Auxilio saúde: R$ ");
                 auxilioSaude = Console.lerDouble();
 
                 Desenvolvedor temp = new Desenvolvedor(nome, matricula, horasTrab, valorH, tecnologia, auxilioSaude);
@@ -134,7 +134,7 @@ public abstract class Sistema {
         Trabalhavel supervisor;
         String curso;
 
-        System.out.println("CADASTRO DE DESENVOLVEDOR");
+        System.out.println("CADASTRO DE ESTAGIÁRIO");
         do {
             System.out.print("Insira a matrícula: ");
             matricula = Console.lerInt();
@@ -146,7 +146,7 @@ public abstract class Sistema {
                 nome = Console.lerString();
                 System.out.print("Horas trabalhadas: ");
                 horasTrab = Console.lerDouble();
-                System.out.print("Valor hora: R$");
+                System.out.print("Valor hora: R$ ");
                 valorH = Console.lerDouble();
                 supervisor = buscarSupervisor();
                 System.out.print("Curso: ");
@@ -182,7 +182,7 @@ public abstract class Sistema {
         Trabalhavel temp = ListaFuncionarios.buscarFuncionario(matricula);
 
         if (temp == null) {
-            System.out.println("Matricula %d não esta cadastrada.");
+            System.out.printf("Matricula %d não esta cadastrada.%n", matricula);
         } else {
             System.out.println(temp);
         }

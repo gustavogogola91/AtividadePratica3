@@ -57,7 +57,7 @@ public class Estagiario extends Funcionario implements Trabalhavel {
 
     @Override
     public String toString() {
-        String txt = super.toString() + "\nSupervisor" + supervisor.getNome() + " Matricula:" + supervisor.getMatricula() + "\nCurso: " + curso;
+        String txt = super.toString() + "\nSupervisor: " + supervisor.getNome() + " Matricula:" + supervisor.getMatricula() + "\nCurso: " + curso;
         return txt;
     }
 
