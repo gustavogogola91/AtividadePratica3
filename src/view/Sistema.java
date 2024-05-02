@@ -24,7 +24,7 @@ public abstract class Sistema {
             System.out.println("5) Buscar funcionário");
             System.out.println("6) Excluir funcionário");
             System.out.println("0) Finalizar programa");
-            System.out.print(">>");
+            System.out.print(">> ");
             op = Console.lerInt();
 
             switch (op) {
@@ -68,8 +68,7 @@ public abstract class Sistema {
 
         System.out.println("CADASTRO DE GERENTE");
         do {
-            System.out.print("Insira a matrícula: ");
-            matricula = Console.lerInt();
+            matricula = receberMatricula();
 
             if (ListaFuncionarios.verificarMatricula(matricula)) {
                 System.out.printf("Matricula %d já está cadastrada, insira novamente.%n", matricula);
@@ -92,6 +91,22 @@ public abstract class Sistema {
         } while (true);
     }
 
+    private static int receberMatricula() {
+        int matricula;
+        do {
+            System.out.print("Insira a matrícula: ");
+            matricula = Console.lerInt();
+
+            if(matricula > 0 ) {
+                break;
+            }
+
+            System.out.println("A matricula deve ser um inteiro maior do que 0, por favor insira novamente.");
+
+        } while (true);
+        return matricula;
+    }
+
     private static void cadastrarDesenvolvedor() {
         String nome;
         int matricula;
@@ -102,8 +117,7 @@ public abstract class Sistema {
 
         System.out.println("CADASTRO DE DESENVOLVEDOR");
         do {
-            System.out.print("Insira a matrícula: ");
-            matricula = Console.lerInt();
+            matricula = receberMatricula();
 
             if (ListaFuncionarios.verificarMatricula(matricula)) {
                 System.out.printf("Matricula %d já está cadastrada, insira novamente.%n", matricula);
@@ -136,8 +150,7 @@ public abstract class Sistema {
 
         System.out.println("CADASTRO DE ESTAGIÁRIO");
         do {
-            System.out.print("Insira a matrícula: ");
-            matricula = Console.lerInt();
+            matricula = receberMatricula();
 
             if (ListaFuncionarios.verificarMatricula(matricula)) {
                 System.out.printf("Matricula %d já está cadastrada, insira novamente.%n", matricula);
@@ -163,7 +176,7 @@ public abstract class Sistema {
         int matricula;
         do {
             System.out.print("Insira a matricula do supervisor: ");
-            matricula = Console.lerInt();
+            matricula = receberMatricula();
             Trabalhavel temp = ListaFuncionarios.buscarFuncionario(matricula);
 
             if (temp == null) {
